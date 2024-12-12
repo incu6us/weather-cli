@@ -1,0 +1,58 @@
+issues:
+  exclude-dirs-use-default: false
+  exclude-files:
+    - ".*_test.go$"
+    - "main.go"
+  exclude-dirs:
+    - mock
+
+run:
+  concurrency: 4
+  timeout: 5m
+  issues-exit-code: 2
+  tests: false
+  modules-download-mode: readonly
+  allow-parallel-runners: true
+  go: '1.23'
+
+linters-settings:
+  gocyclo:
+    min-complexity: 50
+  funlen:
+    lines: -1
+    statements: 60
+  lll:
+    line-length: 160
+
+linters:
+  disable-all: true
+  enable:
+    - bodyclose
+    - dogsled
+    - dupl
+    - errcheck
+    - errorlint
+    - funlen
+    - gochecknoinits
+    - goconst
+    - gocritic
+    - gocyclo
+    - gofmt
+    - goimports
+    - goprintffuncname
+    - gosimple
+    - govet
+    - ineffassign
+    - lll
+    - misspell
+    - nakedret
+    - noctx
+    - nolintlint
+    - revive
+    - staticcheck
+    - stylecheck
+    - typecheck
+    - unconvert
+    - unparam
+    - unused
+    - whitespace

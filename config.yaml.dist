@@ -1,0 +1,11 @@
+---
+log_encoder: text
+log_level: info
+google:
+    api_key: ""
+open_weather_map:
+  api_key: ""
+weather_api:
+  api_key: ""
+weather_bit:
+  api_key: ""
