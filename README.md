@@ -1,7 +1,7 @@
 weather-cli
 ---
 
-## To install dependencies run
+## To install dependencies
 ```bash
 make bin-install
 ```
