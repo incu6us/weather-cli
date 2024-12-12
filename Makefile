@@ -1,5 +1,5 @@
-.PHONY install:
-install:
+.PHONY bin-install:
+bin-install:
 	@echo "Installing binaries..."
 	go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 	go install github.com/gotesttools/gotestfmt/v2/cmd/gotestfmt@latest

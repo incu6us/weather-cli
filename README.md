@@ -7,8 +7,8 @@ make bin-install
 ```
 
 ### Other `make` commands
-`make test` - run tests
-`make lint` - run linter
+    * `make test` - run tests
+    * `make lint` - run linter
 
 ## Before running the application
 Create a config.yaml file in the root directory of the project. You can use the config.yaml.dist file as a template.
