@@ -13,7 +13,7 @@ func run() *cli.Command {
 		Flags: []cli.Flag{
 			&cli.StringFlag{
 				Name:  "country",
-				Value: "UA",
+				Value: "Ukraine",
 				Usage: "choose country",
 			},
 			&cli.StringFlag{

@@ -24,7 +24,7 @@ Create a config.yaml file in the root directory of the project. You can use the 
         help, h  Shows a list of commands or help for one command
 
     * run command options:
-        --country value  choose country (default: "UA")
+        --country value  choose country (default: "Ukraine")
         --city value     choose city (default: "Kyiv")
         --help, -h       show help
 
