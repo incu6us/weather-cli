@@ -5,10 +5,6 @@ import (
 	"time"
 
 	"github.com/incu6us/weather-cli/app/provider"
-	"github.com/incu6us/weather-cli/client/openweathermap"
-	"github.com/incu6us/weather-cli/client/weatherapi"
-	"github.com/incu6us/weather-cli/client/weatherbit"
-	"github.com/incu6us/weather-cli/pkg/geodecoder"
 	"github.com/incu6us/weather-cli/pkg/logger"
 	"github.com/incu6us/weather-cli/service"
 )
@@ -34,15 +30,8 @@ func NewApplication(ctx context.Context, configPath string, setDebug bool) (*App
 		return nil, err
 	}
 
-	svc := service.NewService(
-		geodecoder.NewDecoder(cfg.Google.APIKey),
-		[]service.WeatherClient{
-			openweathermap.NewClient(cfg.OpenWeatherMap.APIKey, setDebug, timeout),
-			weatherapi.NewClient(cfg.WeatherAPI.APIKey, setDebug, timeout),
-			weatherbit.NewClient(cfg.WeatherBit.APIKey, setDebug, timeout),
-		},
-		log,
-	)
+	svc := provider.ProvideService(cfg, setDebug, timeout, log)
+
 	app := &Application{
 		appContext: ctx,
 		service:    svc,
